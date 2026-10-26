@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8e9f0">
+  <title>Basket World</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" onclick="showHome();return false">🧺 Basket World</a>
+    <button class="round-button" id="homeButton" onclick="showHome()">⌂</button>
+  </header>
+
+  <main>
+    <section id="homeScreen" class="screen">
+      <div class="hero">
+        <span class="eyebrow">YOUR WORLD, YOUR COLLECTION</span>
+        <h1>Imagine it.<br><span>Basket it.</span></h1>
+        <p>Create your own baskets filled with the things you love.</p>
+        <button class="primary-button" onclick="createBasket()">＋ Create New Basket</button>
+      </div>
+      <div class="section-heading">
+        <h2>Your baskets</h2>
+        <span id="basketCount">0 collections</span>
+      </div>
+      <div id="basketGrid" class="basket-grid"></div>
+    </section>
+
+    <section id="basketScreen" class="screen hidden">
+      <div class="basket-header">
+        <button class="back-button" onclick="showHome()">← All baskets</button>
+        <input id="basketName" class="basket-name" value="My Basket" maxlength="35"
